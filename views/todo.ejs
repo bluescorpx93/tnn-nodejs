@@ -1,0 +1,36 @@
+<! DOCTYPE html>
+<html>
+<head> 
+	<title> Todo App</title>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"> </script>
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.min.css' >
+</head>
+
+<body>
+	<div class='row'>
+		<h1> To Do App</h1>
+		<div id='todo-table'>
+			<div class='medium-6 columns'>
+				<form method='post' action='/todo'>
+					<input type='text' name='item' placeholder='Add New Item' required id='item_name'>
+					<button type='submit' class='button'> Add Item</button>
+				</form>
+			</div>
+			<div id='report'></div>
+			<div class='medium-6 columns'>
+				<ul> 
+					<% for (var i=0; i<data.length; i++){ %>
+					<li> <%= data[i].item %> 
+					<!-- Uncomment the following lines for locally deleting -->
+						<!-- <button class='button delete-item'>
+							X <span class="hidden_span hide"><%= i %></span>
+						</button> -->
+					</li>
+					<% }%>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+<script src='/assets/todo.js'> </script>
+</html>

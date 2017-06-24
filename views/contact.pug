@@ -1,0 +1,23 @@
+html
+	head 
+		title Contact
+		link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.min.css')
+	body
+		include partials/navbar
+		h1 Contact Us
+		p= query_string.name
+		p= query_string.department
+		
+		div(class=row)
+			div(class='medium-6 columns')
+				form(id='contact-form' method='POST' action='contact')
+					fieldset
+						label(for='who') Contact
+						input(type='text' id='who' value=query_string.name name='name')
+					fieldset
+						label(for='department') Department
+						input(type='text' id='department' value=query_string.department name='department')
+					fieldset
+						label(for='email') Email
+						input(type='email' id='email' name='email') 
+					input(type='submit' value='Submit' class='button')

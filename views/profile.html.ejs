@@ -1,0 +1,19 @@
+<! DCOYPE html>
+<html>
+	<head> 
+<title> Tutorial</title>
+	</head>
+	<body>
+	<% include partials/nav.ejs %>
+
+		<h1> <%= person.name %> Profile </h1>
+		<p>Page/Age <%= person.age %> </p>
+		<p> ID: <%= person.id %>
+		<h3> Hobbies </h3>
+		<ul>
+			<% person.hobbies.forEach(function(item){ %>
+				<li> <%= item %> </li>
+			<% }); %>  
+		</ul>
+	</body>
+</html>
